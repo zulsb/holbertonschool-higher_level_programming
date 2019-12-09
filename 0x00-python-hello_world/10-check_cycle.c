@@ -13,14 +13,13 @@ int check_cycle(listint_t *list)
 	one_l = list;
 	two_l = list;
 
-	while (one_l != NULL && two_l != NULL && two_l->next != NULL)
+	while (one_l != '\0' && two_l != '\0' && two_l->next != '\0')
 	{
-		one_l = one_l->next->next;
-		two_l = two_l->next;
+		two_l = two_l->next->next;
+		one_l = one_l->next;
 
 		if (one_l == two_l)
-		return (1);
+			return (1);
 	}
-
 	return (0);
 }
