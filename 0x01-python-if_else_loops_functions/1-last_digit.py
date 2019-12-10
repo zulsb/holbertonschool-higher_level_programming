@@ -8,6 +8,6 @@ print("Last digit of {} is {} and is".format(number, final), end=" ")
 if final > 5:
     print("greater than 5")
 elif final == 0:
-    print("and is 0")
+    print("0")
 else:
     print("less than 6 and not 0")
