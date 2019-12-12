@@ -8,7 +8,7 @@ if __name__ == "__main__":
     if len(argv) == 2:
         print("{} argument:".format(arg_num))
     else:
-        print("{} argument:".format(arg_num))
+        print("{} arguments:".format(arg_num))
 
     for num in range(1, len(argv)):
         print("{}: {}".format(num, argv[num]))
