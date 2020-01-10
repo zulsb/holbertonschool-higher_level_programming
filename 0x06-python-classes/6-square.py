@@ -3,9 +3,13 @@ class Square():
     """ This is a class Square that defines a square
     with a private instance attribute: size """
 
-    def __init__(self, size=0):
-        """ Method to initialize object attributes"""
+    def __init__(self, size=0, position=(0, 0)):
+        """ Method to initialize object attributes
+            Args:
+            size: Size of square
+            position: square position"""
         self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -24,7 +28,7 @@ class Square():
         else:
             self.__size = value
 
-    @property    
+    @property
     def position(self):
         """ Return the position """
         return self.__position
@@ -34,9 +38,12 @@ class Square():
         """Method to get a value size
         Args:
             value: Private instance attribute """
-        if isinstance(value, tuple) or len(value) == 2 or value[0] < 0 or value[1] < 0:              
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        if isinstance(value, tuple) and len(value) == 2 and \
+            isinstance(value[0], int) \ and isinstance(value[1], int)\
+                and value[0] >= 0 and value[1] >= 0:
+                    self.__position = value
+                    return
+        raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """ Method to get a area square """
@@ -47,6 +54,7 @@ class Square():
         if self.size == 0:
             print()
         else:
-            for r in range(self.__size):
+            print("\n" * self.__position[1], end="")
+            for r in range(0, self.__size):
                 print(" " * self.__position[0], end="")
-                print("#" * self.size)
+                print("#" * self.__size)
