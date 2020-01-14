@@ -25,15 +25,17 @@ def matrix_divided(matrix, div):
 
     r_d = []
     count = 0
+    err = "matrix must be a matrix (list of lists) of integers/floats"
+
     for mbr in matrix:
         if not isinstance(mbr, list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError(err)
 
         r_d.append([])
 
         for i in mbr:
             if not isinstance(i, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(err)
             r_d[count].append(round(i / div, 2))
         count += 1
 
