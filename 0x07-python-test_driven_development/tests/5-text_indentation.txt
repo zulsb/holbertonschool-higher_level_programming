@@ -6,23 +6,49 @@ Usage ``text_indentation`` function
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. """)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+>>> text_indentation("""Hello. My. Name. Is. Luz.    """)
+Hello.
+<BLANKLINE>
+My.
+<BLANKLINE>
+Name.
+<BLANKLINE>
+Is.
+<BLANKLINE>
+Luz.
+<BLANKLINE>
 
-Quonam modo?
+>>> text_indentation("Utrum igitur tibi litteram videor an totas paginas commovere")
+Utrum igitur tibi litteram videor an totas paginas commovere
 
-Utrum igitur tibi litteram videor an totas paginas commovere?
+>>> text_indentation(5)
+Traceback (most recent call last):
+TypeError: text must be a string
 
-Non autem hoc:
+>>> text_indentation("2")
+2
 
-igitur ne illud quidem.
+>>> text_indentation("24""helloLuz")
+24helloLuz
 
-Fortasse id optimum, sed ubi illud:
+>>> text_indentation("!:?.")
+!:
+<BLANKLINE>
+?
+<BLANKLINE>
+.
+<BLANKLINE>
 
-Plus semper voluptatis?
 
-Teneo, inquit, finem illi videri nihil dolere.
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
 
+>>> text_indentation("   This utrum. a test ")
+This utrum.
+<BLANKLINE>
+a test
+
+>>> text_indentation(("5", 24))
+Traceback (most recent call last):
+TypeError: text must be a string
