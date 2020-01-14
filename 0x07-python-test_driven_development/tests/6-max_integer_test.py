@@ -27,7 +27,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_neg(self):
         self.assertEqual(max_integer([-2, -1]), -1)
 
-    def test_basic_negative_zero_zero(self):
+    def test_negative_zero(self):
         l = [0, -1]
         self.assertEqual(max_integer(l), 0)
 
