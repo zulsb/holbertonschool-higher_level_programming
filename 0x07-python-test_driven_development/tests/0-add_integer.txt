@@ -18,7 +18,7 @@ Using ``add_integer``
 >>> add_integer(5.8, 3.1)
 8
 
->>> add_integer(5, 3.5)
+>>> add_integer(5, 3.99)
 8
 
 >>> add_integer(5, -3.5)
@@ -38,3 +38,11 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 
 >>> add_integer(5)
 103
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
