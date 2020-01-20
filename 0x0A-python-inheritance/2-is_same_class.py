@@ -7,8 +7,8 @@
 def is_same_class(obj, a_class):
     """ Function to compare if exact same object
         Args:
-        obj:
-        a_class:
+        obj: Object.
+        a_class: Class.
     """
     if type(obj) is a_class:
         return True
