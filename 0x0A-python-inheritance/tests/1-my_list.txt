@@ -31,3 +31,12 @@ Using ``my_list``
 
 >>> l.print_sorted()
 [-50, -9, -5]
+
+>>> l = MyList()
+>>> l.append(5)
+>>> l.append(1)
+>>> l.append(-5)
+>>> print(l)
+[5, 1, -5]
+>>> l.print_sorted()
+[-5, 1, 5]
