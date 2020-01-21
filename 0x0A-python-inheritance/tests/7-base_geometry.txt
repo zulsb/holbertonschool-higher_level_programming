@@ -40,3 +40,8 @@ ValueError: hello must be greater than 0
 >>> geo.integer_validator("hello", "Luz")
 Traceback (most recent call last):
 TypeError: hello must be an integer
+
+>>> geo.integer_validator("hello", -12.55)
+Traceback (most recent call last):
+TypeError: hello must be an integer
+
