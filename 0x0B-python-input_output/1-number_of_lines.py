@@ -9,4 +9,5 @@ def number_of_lines(filename=""):
         Args:
             filename: Text file.
     """
-    return len(open(filename, mode="r", encoding="utf-8").readlines())
+    with open(filename, mode="r", encoding="utf-8") as fl:
+        return(len(fl.readlines()))
