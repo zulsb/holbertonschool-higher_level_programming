@@ -68,3 +68,9 @@ TypeError: s must be an integer
 >>> geo.integer_validator("i", NaN)
 Traceback (most recent call last):
 NameError: name 'NaN' is not defined
+
+>>> geo.integer_validator("i", (1, 2))
+Traceback (most recent call last):
+TypeError: i must be an integer
+
+>>> geo.integer_validator("e", int(10.55))
