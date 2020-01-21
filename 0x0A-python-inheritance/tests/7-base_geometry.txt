@@ -1,0 +1,42 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+---------------------
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("hello", 22)
+>>> geo = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: object() takes no parameters
+
+>>> geo = BaseGeometry()
+>>> geo = BaseGeometry("hello")
+Traceback (most recent call last):
+TypeError: object() takes no parameters
+
+>>> geo.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> geo.area("56")
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> geo.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> geo.integer_validator("56", 5, 33)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> geo.integer_validator("hello", 0)
+Traceback (most recent call last):
+ValueError: hello must be greater than 0
+
+>>> geo.integer_validator("hello", "Luz")
+Traceback (most recent call last):
+TypeError: hello must be an integer

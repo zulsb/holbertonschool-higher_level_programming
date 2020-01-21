@@ -7,10 +7,18 @@ Using ``my_list``
 >>> MyList = __import__('1-my_list').MyList
 
 >>> l = MyList()
+>>> print(l)
+[]
 
->>> l = MyList.print_sorted([1, 2, 3])
+>>> l = MyList([9, 5, 50])
 
 >>> print(l)
-[1, 2, 3]
+[9, 5, 50]
 
->>>
+>>> l = MyList([-9, -5, -50])
+
+>>> print(l)
+[-9, -5, -50]
+
+>>> l.print_sorted()
+[-50, -9, -5]
