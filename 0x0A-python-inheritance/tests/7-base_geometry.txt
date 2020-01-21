@@ -60,3 +60,11 @@ ValueError: g must be greater than 0
 >>> geo.integer_validator("a", 12.55)
 Traceback (most recent call last):
 TypeError: a must be an integer
+
+>>> geo.integer_validator("s", None)
+Traceback (most recent call last):
+TypeError: s must be an integer
+
+>>> geo.integer_validator("i", NaN)
+Traceback (most recent call last):
+NameError: name 'NaN' is not defined
