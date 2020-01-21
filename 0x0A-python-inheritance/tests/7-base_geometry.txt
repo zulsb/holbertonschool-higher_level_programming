@@ -73,4 +73,8 @@ NameError: name 'NaN' is not defined
 Traceback (most recent call last):
 TypeError: i must be an integer
 
+>>> geo = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: object() takes no parameters
+
 >>> geo.integer_validator("e", int(10.55))
