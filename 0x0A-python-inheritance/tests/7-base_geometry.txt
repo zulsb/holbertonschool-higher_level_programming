@@ -45,3 +45,10 @@ TypeError: hello must be an integer
 Traceback (most recent call last):
 TypeError: hello must be an integer
 
+>>> geo.integer_validator("e", 1e300)
+Traceback (most recent call last):
+TypeError: e must be an integer
+
+>>> geo.integer_validator("a", [5, 2])
+Traceback (most recent call last):
+TypeError: a must be an integer
