@@ -10,6 +10,15 @@ Using ``my_list``
 >>> print(l)
 []
 
+>>> l = MyList()
+>>> l.append(1)
+>>> l.append(4)
+>>> l.append(2)
+>>> print(l)
+[1, 4, 2]
+>>> l.print_sorted()
+[1, 2, 4]
+
 >>> l = MyList([9, 5, 50])
 
 >>> print(l)
