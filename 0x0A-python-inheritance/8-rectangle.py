@@ -17,10 +17,10 @@ class BaseGeometry():
             name: Name value.
             value: Value.
         """
-        if not type(value) is int:
-            raise TypeError("{:s} must be an integer".format(name))
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{:s} must be greater than 0".format(name))
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
@@ -31,7 +31,7 @@ class Rectangle(BaseGeometry):
             width: Rectangle width.
             height: Rectangle height.
         """
-        super().integer_validator("width", width)
+        self.integer_validator("width", width)
         self.__width = width
-        super().integer_validator("height", height)
+        self.integer_validator("height", height)
         self.__height = height
