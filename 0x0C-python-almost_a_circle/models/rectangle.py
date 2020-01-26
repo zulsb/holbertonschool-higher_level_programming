@@ -98,10 +98,22 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints in stdout the Rectangle instance with the character #. """
+        for i in range(self.y):
+            print()
         for i in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        """ Returns string of rectangle"""
+        """ Returns string of rectangle. """
         return("[Rectangle] ({}) {}/{} - {}/{}"
                .format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args):
+        """ That assigns an argument to each attribute.
+            Args:
+                args: Attribute tuple of rectangle.
+        """
+        if args:
+            ar = ["id", "width", "height", "x", "y"]
+            for k, v in zip(ar, args):
+                setattr(self, k, v)  
