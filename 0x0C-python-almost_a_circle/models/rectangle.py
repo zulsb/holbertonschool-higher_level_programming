@@ -123,3 +123,11 @@ class Rectangle(Base):
                 for k, v in kwargs.items():
                     if k in ar:
                         setattr(self, k, v)
+
+    def to_dictionary(self):
+        dinary = {}
+        ar = ["id", "width", "height", "x", "y"]
+
+        for i in ar:
+            dinary[i] = getattr(self, i)
+        return(dinary)
