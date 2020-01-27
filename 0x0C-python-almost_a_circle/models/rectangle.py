@@ -125,6 +125,7 @@ class Rectangle(Base):
                         setattr(self, k, v)
 
     def to_dictionary(self):
+        """ Returns the dictionary representation of a Rectangle. """
         dinary = {}
         ar = ["id", "width", "height", "x", "y"]
 
