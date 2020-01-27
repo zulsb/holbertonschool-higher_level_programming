@@ -11,7 +11,7 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ class constructor:
+        """ Function constructor:
             Args:
                 id: Identifier.
         """
@@ -22,6 +22,10 @@ class Base():
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """ Is one of the standard formats for sharing data representation.
+            Args:
+                list_dictionaries: Is a list of dictionaries.
+        """
         if not list_dictionaries or len(list_dictionaries) is 0:
             return "[]"
         else:
