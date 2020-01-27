@@ -28,5 +28,4 @@ class Base():
         """
         if not list_dictionaries or len(list_dictionaries) is 0:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
