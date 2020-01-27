@@ -21,12 +21,13 @@ class Base():
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ Is one of the standard formats for sharing data representation.
             Args:
                 list_dictionaries: Is a list of dictionaries.
         """
-        if list_dictionaries == [] or len(list_dictionaries) is None:
+        if list_dictionaries or len(list_dictionaries) is None:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
