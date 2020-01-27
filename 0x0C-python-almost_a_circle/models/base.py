@@ -54,6 +54,6 @@ class Base():
                 json_string: Is a string representing a list of dictionaries.
         """
         if not json_string or len(json_string) is None:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
