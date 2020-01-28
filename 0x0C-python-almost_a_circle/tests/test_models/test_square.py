@@ -5,10 +5,13 @@
 import unittest
 import sys
 import pep8
-import io
+from io import StringIO
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
+import models.base
+import models.rectangle
+import models.square
 
 
 class T_Square(unittest.TestCase):

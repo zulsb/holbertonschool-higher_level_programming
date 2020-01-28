@@ -8,6 +8,10 @@ import pep8
 import io
 from models.base import Base
 from models.rectangle import Rectangle
+import importlib
+from contextlib import redirect_stdout
+import models.base
+import models.rectangle
 
 
 class test_Rectangle(unittest.TestCase):

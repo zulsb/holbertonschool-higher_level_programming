@@ -7,6 +7,13 @@ import pep8
 import os
 from models.base import Base
 from models.rectangle import Rectangle
+import importlib
+from contextlib import redirect_stdout
+import io
+from models.base import Base
+import models.base
+import models.rectangle
+import models.square
 
 
 class Test_Base_(unittest.TestCase):
