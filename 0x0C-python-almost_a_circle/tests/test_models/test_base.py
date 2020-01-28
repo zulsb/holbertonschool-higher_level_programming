@@ -2,60 +2,36 @@
 """
     Tests class Base.
 """
+import io
 import unittest
-import pep8
-import os
-from models.base import Base
-from models.rectangle import Rectangle
 import importlib
 from contextlib import redirect_stdout
-import io
+from models.rectangle import Rectangle
+from models.square import Square
 from models.base import Base
 import models.base
 import models.rectangle
 import models.square
 
 
-class Test_Base_(unittest.TestCase):
-    """ Tests class Base. """
-    def st_u(self):
-        """ Runs before each unittest. """
+class Test_Base(unittest.TestCase):
+    """Class test class base."""
+
+    def set_Up(self):
+        """Setup for reseting. """
         Base._Base__nb_objects = 0
+        importlib.reload(models.square)
+        importlib.reload(models.rectangle)
+        importlib.reload(models.base)
 
-    def t_init_empty_id(self):
-        """ Test init empty id. """
-        self.assertEqual(Base().id, 1)
-        self.assertEqual(Base().id, 2)
+    def test_au_id(self):
+        """test. """
+        a = Base()
+        self.assertEqual(a.id, 1)
+        b = Base()
+        self.assertEqual(b.id, 2)
 
-    def t_cls_docstr(self):
-        """ Test class docstr. """
-        self.assertIsNotNone(Base.__doc__)
-
-    def t_pep8(self):
-        """ Test pep8"""
-        style = pep8.StyleGuide(quiet=True)
-        pep = style.check_files(["models/base.py"])
-        self.assertEqual(pep.total_errors, 0)
-
-    def t_init_non_empty_id(self):
-        """ Test init non empty id. """
-        self.assertTrue(Base(42), 42)
-
-    def t_init_tr_inst(self):
-        """ Test init 3 instances. """
-        b1 = Base()
-        b2 = Base(42)
-        b3 = Base()
-        self.assertTrue(b1.id == 1)
-        self.assertTrue(b2.id == 42)
-        self.assertTrue(b3.id == 2)
-
-    def t_init_tw_inst(self):
-        """ Test init 2 instances. """
-        b1 = Base(42)
-        b2 = Base()
-        self.assertTrue(b1.id == 42)
-        self.assertTrue(b2.id == 1)
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_spec_id(self):
+        """assigned id. """
+        a = Base(8)
+        self.assertEqual(a.id, 8)
