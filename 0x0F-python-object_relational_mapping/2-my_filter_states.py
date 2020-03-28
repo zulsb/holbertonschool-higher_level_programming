@@ -21,7 +21,7 @@ if __name__ == "__main__":
     cursor = conec_db.cursor()
     search_name = """
     SELECT * FROM states
-    WHERE name LIKE '{:s}'
+    WHERE name LIKE BINARY '{:s}'
     ORDER BY id ASC""".format(argv[4])
 
     cursor.execute(search_name)
