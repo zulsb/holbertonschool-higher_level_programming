@@ -12,5 +12,5 @@ Base = declarative_base()
 class State(Base):
     """Class State which enables links to the MySQL table states."""
     __tablename__ = "states"
-    id = Column(Integer, nullable=False, primary_key=True)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
